@@ -20,6 +20,9 @@ RUN apt install  unzip -y
 
 RUN curl -sS https://starship.rs/install.sh  | sh -s -- --yes
 
+RUN curl https://sh.rustup.rs -sSf | sh  -s -- -y
+
+
 RUN apt install exa -y
 
 RUN apt install  wl-clipboard
