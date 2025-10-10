@@ -22,6 +22,8 @@ RUN curl -sS https://starship.rs/install.sh  | sh -s -- --yes
 
 RUN apt install exa -y
 
+RUN apt install  wl-clipboard
+
 
 # Addd  user
 RUN apt install sudo -y
