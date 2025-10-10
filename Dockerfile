@@ -20,7 +20,6 @@ RUN apt install  unzip -y
 
 RUN curl -sS https://starship.rs/install.sh  | sh -s -- --yes
 
-RUN curl https://sh.rustup.rs -sSf | sh  -s -- -y
 
 
 RUN apt install exa -y
@@ -44,3 +43,8 @@ RUN mkdir -p /home/niklas/ros2_ws/src
 # Copy Config in container
 COPY --chown=niklas:niklas .config /home/niklas/.config/
 COPY --chown=niklas:niklas .bashrc /home/niklas/
+
+
+RUN curl https://sh.rustup.rs -sSf | sh  -s -- -y
+ENV PATH="/home/niklas/.cargo/bin:${PATH}"
+
