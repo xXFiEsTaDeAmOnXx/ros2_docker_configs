@@ -1,0 +1,23 @@
+---
+services:
+  ros2_base:
+    container_name: ros2_base
+    build:
+      context: .
+    environment:
+      DISPLAY: $DISPLAY
+      ROS_DOMAIN_ID: 99
+      QT_X11_NO_MITSHM: '1'
+    network_mode: host
+    ipc: host
+    privileged: true
+    stdin_open: true
+    volumes:
+      - ros2_ws_dev_home:/home/niklas
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - $HOME/.Xauthority:/home/niklas/.Xauthority
+      - ./ros2_ws/src:/home/niklas/ros2_ws/src
+    command: [bash, -c, "tail -f /dev/null\n"]
+volumes:
+  ros2_ws_dev_home:
+networks: {}

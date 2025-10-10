@@ -1,0 +1,120 @@
+add_newline = false
+
+format = """
+$all\
+$line_break\
+$character
+"""
+
+[username]
+style_user = "bg:#7C3AED fg:white bold"
+style_root = "bg:#DC2626 fg:white bold"
+format = '[$user]($style)[](bg:#5B21B6 fg:#7C3AED)'
+disabled = false
+show_always = false
+
+[hostname]
+ssh_only = true
+style = "bg:#5B21B6 fg:white bold"
+format = '[$hostname]($style)[](bg:#06B6D4 fg:#5B21B6)'
+disabled = false
+
+[directory]
+style = "bg:#06B6D4 fg:#0F172A bold"
+format = "[ $path ]($style)[](bg:#10B981 fg:#06B6D4)"
+truncation_length = 4
+truncation_symbol = "…/"
+truncate_to_repo = true
+home_symbol = "󰋜"
+
+[directory.substitutions]
+"Desktop" = "󰚝"
+"Documents" = "󰈙"
+"Downloads" = "󰭿"
+"Music" = "󰎈"
+"Pictures" = "󰉏"
+"Videos" = "󰕧"
+"Projects" = "󰲋"
+"Code" = "󰨞"
+
+[git_branch]
+symbol = " "
+style = "bg:#10B981 fg:#0F172A bold"
+format = '[$symbol$branch]($style)'
+
+[git_status]
+style = "bg:#F59E0B fg:#0F172A bold"
+format = '([$all_status$ahead_behind]($style)[](bg:#8B5CF6 fg:#F59E0B))'
+conflicted = " =${count}"
+ahead = " ⇡${count}"
+behind = " ⇣${count}"
+diverged = " ⇕⇡${ahead_count}⇣${behind_count}"
+untracked = " ?${count}"
+stashed = " ${count}"
+modified = " !${count}"
+staged = " +${count}"
+renamed = " »${count}"
+deleted = " ✘${count}"
+
+[python]
+symbol = "󰌠 "
+style = "bg:#8B5CF6 fg:white bold"
+format = '[$symbol$version]($style)'
+detect_extensions = ["py"]
+detect_files = [".python-version", "Pipfile", "pyproject.toml", "requirements.txt"]
+
+[cpp]
+symbol = "󰙲 "
+style = "bg:#8B5CF6 fg:white bold"
+format = '[$symbol$version]($style)'
+detect_extensions = ["cpp", "cc", "cxx", "hpp"]
+
+[c]
+symbol = "󰝤 "
+style = "bg:#8B5CF6 fg:white bold"
+format = '[$symbol$version]($style)'
+detect_extensions = ["c", "h"]
+
+[rust]
+symbol = "󱘗 "
+style = "bg:#8B5CF6 fg:white bold"
+format = '[$symbol$version]($style)'
+
+[nodejs]
+symbol = "󰎙 "
+style = "bg:#8B5CF6 fg:white bold"
+format = '[$symbol$version]($style)'
+
+
+# ROS Domain ID
+[custom.ros_domain]
+command = "echo $ROS_DOMAIN_ID"
+when = 'test -n "$ROS_DOMAIN_ID"'
+style = "bg:#10B981 fg:#0F172A bold"
+format = '[ 🤖 $output]($style)[](bg:#EC4899 fg:#10B981)'
+description = "ROS Domain ID"
+
+[cmd_duration]
+min_time = 2000
+style = "bg:#EC4899 fg:white bold"
+format = '[ ⏱ $duration]($style)[](fg:#EC4899)'
+show_milliseconds = false
+
+[character]
+success_symbol = "[❯](bold #10B981)"
+error_symbol = "[❯](bold #EF4444)"
+vimcmd_symbol = "[❮](bold #10B981)"
+vimcmd_replace_one_symbol = "[❮](bold #8B5CF6)"
+vimcmd_replace_symbol = "[❮](bold #8B5CF6)"
+vimcmd_visual_symbol = "[❮](bold #F59E0B)"
+
+[line_break]
+disabled = false
+
+[docker_context]
+symbol = "󰡨 "
+style = "bg:#06B6D4 fg:#0F172A bold"
+format = ''
+only_with_files = true
+disabled = true
+
