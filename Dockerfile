@@ -43,6 +43,7 @@ RUN mkdir -p /home/niklas/ros2_ws/src
 # Copy Config in container
 COPY --chown=niklas:niklas .config /home/niklas/.config/
 COPY --chown=niklas:niklas .bashrc /home/niklas/
+COPY --chown=niklas:niklas .bash_history /home/niklas/
 
 
 RUN curl https://sh.rustup.rs -sSf | sh  -s -- -y
