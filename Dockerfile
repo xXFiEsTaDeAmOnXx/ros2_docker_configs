@@ -26,6 +26,8 @@ RUN apt install exa -y
 
 RUN apt install  wl-clipboard
 
+RUN apt install ripgrep -y
+
 
 # Addd  user
 RUN apt install sudo -y
