@@ -91,4 +91,8 @@ alias jctl="journalctl -p 3 -xb"
 source /opt/ros/humble/setup.bash
 source /home/niklas/ros2_ws/install/setup.bash 
 source /usr/share/gazebo/setup.bash
+source /home/niklas/rwu_ws/install/setup.bash
+source /home/niklas/tiago_ws/install/setup.bash
+
+
 eval "$(starship init bash)"
