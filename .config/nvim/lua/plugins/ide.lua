@@ -19,7 +19,7 @@ return {
   },
   {
     "nvim-treesitter/nvim-treesitter",
-    tag = "v0.9.2",
+    tag = "v0.9.3",
     opts = {
       ensure_installed = {
         "lua",
