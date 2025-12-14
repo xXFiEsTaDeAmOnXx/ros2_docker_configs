@@ -35,7 +35,6 @@ return {
         "dockerfile",
         "python",
         "rust",
-        "latex",
       },
     },
     config = function(_, opts)
