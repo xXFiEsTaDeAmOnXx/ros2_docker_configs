@@ -6,16 +6,7 @@ vim.o.relativenumber = true
 vim.o.foldenable = false -- Dont fold on File-Open
 vim.o.foldlevel = 99 -- Start with all folds open
 
-vim.api.nvim_create_autocmd({ "FileType" }, {
-  callback = function()
-    if require("nvim-treesitter.parsers").has_parser() then
-      vim.o.foldmethod = "expr"
-      vim.o.foldexpr = "nvim_treesitter#foldexpr()"
-    else
-      vim.o.foldmethod = "syntax"
-    end
-  end,
-})
+
 
 -- Command to disable formatting
 vim.api.nvim_create_user_command("FormatDisable", function(args)
