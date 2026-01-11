@@ -62,7 +62,7 @@ return {
   {
     "Saghen/blink.cmp",
     event = "InsertEnter",
-    build = "cargo +nightly build --release",
+    build = "cargo build --release",
     dependencies = {
       "saghen/blink.compat", -- nvim-cmp sources in blink
       "L3MON4D3/LuaSnip", -- snippet engine
